@@ -1,0 +1,146 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import nourish from "../../img/nourishd.png";
+---
+
+<Layout title='Nourishd - samantha Whelpley'>
+  <section class='c12 intro'>
+    <h1 class='intro-title nourishd-link'>
+      🌿 <a href='https://nourishd.co.za/'>Nourish'd Cafe and Juicery</a>
+    </h1>
+    <h2 class='intro-details'>
+      Mobile app built with Angular/Ionic and the Shopify Storefront API to
+      optimize the mobile shopping experience.
+    </h2>
+  </section>
+
+  <main class='c8-center portfolio-page'>
+    <div class='slides-container'>
+      <iframe
+        src='https://docs.google.com/presentation/d/e/2PACX-1vSsuA8gO8y1yjGVbok5AjWkt8g13P1bwCDGQNJj4_dSFrtTjI3VaxcPd7l_GQGi4vSmBqxL93RzO9Kz/embed?start=false&loop=true&delayms=5000'
+        width='480'
+        height='299'
+        allowfullscreen='true'></iframe>
+    </div>
+
+    <h3>Overview</h3>
+    <p>
+      During my study abroad trip with iXperience, I had the opportunity to
+      complete an internship with a local business and complete a project with
+      them that related to the work we were doing in class with full-stack
+      coding. I chose to work with Nourish'd because I loved the idea of working
+      with small establishment prioritizing purity and health, and getting the
+      chance to learn more about e-commerce.
+    </p>
+
+    <br />
+
+    <p>
+      I was on a team with 5 other students and we worked with the Marketing
+      Manager and the founders. The goal with this project was to create a way
+      for their customers to order juice cleanses through their Shopify store
+      using a mobile app that better guided them through the process. When
+      creating a juice cleanse, there are many options to consider and ways for
+      customization. Their Shopify website alone did not have the capability to
+      help customers in the necessary way.
+    </p>
+
+    <h3>Tech Stack</h3>
+    <p>
+      The cross-platform mobile app is build with Angular's Ionic framework. The
+      backend uses Node.js to connect to the Shopify Storefront API, which uses
+      GraphQL to pull data.
+    </p>
+
+    <h3>Timeline</h3>
+    <p>July to September 2019 (~3 months)</p>
+
+    <hr />
+
+    <h3>Description</h3>
+    <p>
+      At the end of the study abroad program, my team had accomplished building
+      a working mobile app. Though not released, it had the functionality to
+      allow customers to successfully order a cleanse with all the necessary
+      details sent to the store.
+    </p>
+
+    <br />
+
+    <p>
+      My major role in this project was becoming familiar with the Shopify API
+      and connecting the frontend to the backend. At first, our team did not
+      realize the availability of the Shopify API and how we could connect the
+      store's exisitng information to our app (rather than creating a new API
+      and database). So we spent some time researching options and determining
+      how to implement the API calls into our app.
+    </p>
+
+    <br />
+
+    <p>
+      Once we learned how it would work, 2 members of our team worked on the UI
+      of the app, 2 members worked on the backend, and 1 worked on backend as
+      well as using Cordova for mobile notifications. I went back and forth
+      between frontend and backend, making sure everything was working properly
+      and helping team members debug issues. I really liked being in this role
+      because I was able to get a very holistic view of the project and came to
+      understand all of its pieces very well.
+    </p>
+
+    <div class='portfolio-img'>
+      <figure>
+        <img src={nourish} />
+        <figcaption>
+          Screens from Nourish'd app: main store page, list of broth cleanses,
+          and cart.
+        </figcaption>
+      </figure>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .intro {
+    text-align: center;
+    width: 75%;
+    margin: 0 auto;
+  }
+  .portfolio-page {
+    padding: 20px;
+  }
+  .portfolio-page h3,
+  .portfolio-page h4 {
+    margin-top: 20px;
+    margin-bottom: 5px;
+  }
+  .portfolio-page a {
+    color: var(--darkblue);
+  }
+  .portfolio-page figcaption {
+    font-size: 1rem;
+    font-style: italic;
+  }
+  .portfolio-img {
+    text-align: center;
+    margin: 10px;
+    padding-top: 10px;
+  }
+  .portfolio-img img {
+    width: 100%;
+  }
+  .slides-container {
+    position: relative;
+    width: 100%;
+    padding-top: 60%;
+    overflow: hidden;
+    text-align: center;
+  }
+  .slides-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+</style>

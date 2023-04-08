@@ -1,0 +1,29 @@
+---
+import SocialMedia from "./SocialMedia.astro";
+---
+
+<footer class='c12'>
+  <SocialMedia />
+  <p class='small-footer-text'>
+    Made with Astro.js and ❤️ by Samantha Whelpley. &copy; 2023
+  </p>
+</footer>
+
+<style>
+  footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 130px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .small-footer-text {
+    text-align: center;
+    font-size: 1rem;
+  }
+</style>
