@@ -2,6 +2,7 @@
   "name": "astro-portfolio",
   "type": "module",
   "version": "0.0.1",
+  "homepage": "https://samwhelpley.me",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
