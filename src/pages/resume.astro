@@ -1,5 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+const url = Astro.url.origin;
 ---
 
 <Layout title='Resume - Samantha Whelpley'>
@@ -32,7 +34,7 @@ import Layout from "../layouts/Layout.astro";
     <p>
       Coursework included independent project building <a
         class='highlight'
-        href='bnb'>full-stack Angular applications</a
+        href=`${url}/portfolio/bnb`>full-stack Angular applications</a
       >
     </p>
     <p>University of Virginia accredited</p>
@@ -62,7 +64,7 @@ import Layout from "../layouts/Layout.astro";
     <p>Web Design Intern | May 2020 - August 2020</p>
     <br />
     <p>
-      Designed and developed <a class='highlight' href='prioritask'
+      Designed and developed <a class='highlight' href=`${url}/portfolio/prioritask`
         >prioriTask</a
       >, a responsive task management web application using Adobe XD and React.
     </p>
@@ -73,7 +75,7 @@ import Layout from "../layouts/Layout.astro";
     <p>
       Created a case study for designing a platform <a
         class='highlight'
-        href='explore-national-parks'>Explore National Parks</a
+        href=`${url}/portfolio/explore`>Explore National Parks</a
       >, a web application for trip tracking and organizing information on
       America's National Parks.
     </p>
@@ -84,7 +86,7 @@ import Layout from "../layouts/Layout.astro";
     <p>
       Collaborated with five other interns to develop <a
         class='highlight'
-        href='nourishd'
+        href=`${url}/portfolio/nourishd`
         >Nourish'd Café and Juicery's cross-platform mobile app</a
       > using the Ionic v4 framework and Shopify Storefront API with Node.js and
       GraphQL.
