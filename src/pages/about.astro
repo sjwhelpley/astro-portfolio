@@ -76,6 +76,8 @@ import me from "../img/profile.png";
     --lightpink: #ffddd2;
     --darkpink: #e29578;
     --darkbackground: #37323e;
+
+    --imageHeight: 300px;
   }
 
   .about {
@@ -101,16 +103,19 @@ import me from "../img/profile.png";
   }
 
   #profile-pic {
-    width: 35%;
+    width: 50%;
     display: block;
     margin: 0 auto;
+    border-radius: var(--imageHeight) var(--imageHeight) 0px 0px;
   }
 
   @media only screen and (min-width: 1100px) {
     #profile-pic {
       float: left;
-      width: 25%;
+      height: var(--imageHeight);
+      width: auto;
       margin: 20px;
+      border-radius: var(--imageHeight) var(--imageHeight) 0px 0px;
     }
   }
 
