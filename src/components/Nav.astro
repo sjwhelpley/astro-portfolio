@@ -3,6 +3,8 @@ import ThemeToggle from "./ThemeToggle";
 
 const pathname = Astro.url.pathname;
 const currentPath = pathname.slice(1); // remove the first "/"
+
+const url = "https://samwhelpley.me";
 ---
 
 <header class='c12 header'>
@@ -10,14 +12,21 @@ const currentPath = pathname.slice(1); // remove the first "/"
 
   <nav class='nav-bar'>
     <h3 class='nav-links'>
-      <a class={currentPath === "" ? "active" : ""} href='/'>Work</a>
+      <a
+        class={currentPath === "" ? "active" : ""}
+        href='https://samwhelpley.me/'>Work</a
+      >
     </h3>
     <h3 class='nav-links'>
-      <a class={currentPath === "about" ? "active" : ""} href='/about'>About</a>
+      <a
+        class={currentPath === "about" ? "active" : ""}
+        href='https://samwhelpley.me/about'>About</a
+      >
     </h3>
     <h3 class='nav-links'>
-      <a class={currentPath === "resume" ? "active" : ""} href='/resume'
-        >Resume</a
+      <a
+        class={currentPath === "resume" ? "active" : ""}
+        href='https://samwhelpley.me/resume'>Resume</a
       >
     </h3>
     <h3 class='nav-links'>
