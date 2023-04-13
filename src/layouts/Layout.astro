@@ -51,6 +51,7 @@ const { title } = Astro.props;
     --darkblue: #006d77;
     --lightpink: #ffddd2;
     --darkpink: #e29578;
+    --darkbackground: #37323e;
   }
   html {
     background-color: #f6f6f6;
@@ -61,7 +62,6 @@ const { title } = Astro.props;
   }
   body {
     font-family: "Roboto", sans-serif;
-    margin: 8px;
   }
   h1,
   h2,
@@ -136,16 +136,30 @@ const { title } = Astro.props;
   .content-mobile {
     display: inline;
   }
+
+  /* DARK MODE */
   .dark {
-    background-color: black;
-    color: white;
+    background-color: var(--darkbackground);
+    color: var(--lightblue);
   }
   .dark .nav-links {
-    color: white;
+    color: var(--lightblue);
   }
   .dark .sticky {
-    color: white;
-    background-color: black;
+    color: var(--lightblue);
+    background-color: var(--darkbackground);
+  }
+  .dark .highlight {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 50%,
+      rgba(226, 149, 120, 0.1) 50%
+    ) !important;
+    display: inline;
+  }
+  .social-media a:hover {
+    color: var(--lightpink);
+    transition: color linear 0.2s;
   }
 
   @media only screen and (min-width: 550px) {

@@ -93,49 +93,22 @@ import Layout from "../layouts/Layout.astro";
     <h3>Skills</h3>
     <h2>Languages</h2>
     <div class='skill-list'>
-      <div class='left-column'>
-        <p>HTML</p>
-        <p>CSS</p>
-        <p>JavaScript</p>
-        <p>Python</p>
-      </div>
-      <div class='right-column'>
-        <p>Python</p>
-        <p>PHP</p>
-        <p>MySQL</p>
-      </div>
+      <p>HTML | CSS | JavaScript | Python</p>
     </div>
 
-    <h2>Frameworks/Libraries</h2>
+    <h2>Frameworks & Libraries</h2>
     <div class='skill-list'>
-      <div class='left-column'>
-        <p>React</p>
-        <p>Angular</p>
-        <p>Ionic</p>
-        <p>Jest & Enzyme for unit testing</p>
-        <p>Apollo Client v3</p>
-      </div>
-      <div class='right-column'>
-        <p>MUI</p>
-        <p>Bootstap</p>
-        <p>Flask</p>
-        <p>Express.js</p>
-        <p>Django</p>
-        <p>GraphQL</p>
-      </div>
+      <p>Frontend: React & React Native | Angular | Ionic | Astro.js | Vite</p>
+      <p>State Management: Redux | Apollo Client v3</p>
+      <p>Testing: Jest | Enzyme | React Testing Library | Vitest</p>
+      <p>Design: MUI | Bootstrap</p>
+      <p>Backend: Flask | Django | Express | GraphQL</p>
     </div>
 
     <h2>Tools</h2>
     <div class='skill-list'>
-      <div class='left-column'>
-        <p>Visual Studio Code</p>
-        <p>Git</p>
-        <p>Sublime Merge</p>
-      </div>
-      <div class='right-column'>
-        <p>Adobe CC (XD, Illustrator, Premiere Pro)</p>
-        <p>Figma</p>
-      </div>
+      <p>Programming: Visual Studio Code | Git | Sublime Merge</p>
+      <p>Design: Adobe CC (XD, Illustrator, Premiere Pro) | Figma</p>
     </div>
 
     <h3>Activities</h3>
@@ -232,6 +205,7 @@ import Layout from "../layouts/Layout.astro";
 
   .skill-list {
     display: flex;
+    flex-direction: column;
   }
 
   .left-column {

@@ -4,29 +4,24 @@ import ThemeToggle from "./ThemeToggle";
 const pathname = Astro.url.pathname;
 const currentPath = pathname.slice(1); // remove the first "/"
 
-const url = "https://samwhelpley.me";
+const url = Astro.url.origin;
 ---
 
 <header class='c12 header'>
-  <h2 class='name'><a href='/'>samantha joy whelpley</a></h2>
+  <h2 class='name'><a href={`${url}`}>samantha joy whelpley</a></h2>
 
   <nav class='nav-bar'>
     <h3 class='nav-links'>
-      <a
-        class={currentPath === "" ? "active" : ""}
-        href='https://samwhelpley.me/'>Work</a
+      <a class={currentPath === "" ? "active" : ""} href={`${url}`}>Work</a>
+    </h3>
+    <h3 class='nav-links'>
+      <a class={currentPath === "about" ? "active" : ""} href={`${url}/about`}
+        >About</a
       >
     </h3>
     <h3 class='nav-links'>
-      <a
-        class={currentPath === "about" ? "active" : ""}
-        href='https://samwhelpley.me/about'>About</a
-      >
-    </h3>
-    <h3 class='nav-links'>
-      <a
-        class={currentPath === "resume" ? "active" : ""}
-        href='https://samwhelpley.me/resume'>Resume</a
+      <a class={currentPath === "resume" ? "active" : ""} href={`${url}/resume`}
+        >Resume</a
       >
     </h3>
     <h3 class='nav-links'>
@@ -55,6 +50,7 @@ const url = "https://samwhelpley.me";
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex-wrap: wrap;
     line-height: 4em;
     width: 90%;
     margin: 0 auto;
@@ -100,6 +96,7 @@ const url = "https://samwhelpley.me";
     header {
       flex-direction: row;
       align-items: unset;
+      justify-content: space-between;
     }
     .name {
       font-size: 1.5rem;
