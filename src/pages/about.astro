@@ -2,6 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 
 import me from "../img/profile.png";
+
+const url = Astro.url.origin
 ---
 
 <Layout title='About - samantha Whelpley'>
@@ -39,6 +41,8 @@ import me from "../img/profile.png";
         Science and certificate in Digital Media, I have the tools to
         continually learn and create.
       </p>
+
+      <p>TLDR??</p> {/* Hover with quick summary? */}
     </div>
     <div class='call-out'>
       <h2>
@@ -53,7 +57,7 @@ import me from "../img/profile.png";
         ✈️ Originally from the Lake Erie shores in Ohio and current
         Pittsburgher, I love traveling to new places and discovering new things.
         I enjoy exploring National Parks (see my project <a
-          href=`${url}/portfolio/explore`>Explore National Parks</a
+          href={`${url}/portfolio/explore`}>Explore National Parks</a
         >) and spent six weeks in South Africa the summer of 2019. I'm grateful
         for any chance to travel and learn from the world!
       </p>
