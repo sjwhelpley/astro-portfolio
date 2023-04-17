@@ -1,0 +1,23 @@
+---
+import BlogCard from "../components/BlogCard.astro";
+import Layout from "../layouts/Layout.astro";
+
+const allPosts = await Astro.glob("./posts/*.md");
+---
+
+<Layout title="Blog - Samantha Whelpley">
+  <h1 style="text-align: center;">Recent Posts</h1>
+  <div class="blog-list">
+    {allPosts.map((post) => <BlogCard post={post} />)}
+  </div>
+</Layout>
+
+<style>
+  .blog-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 0 auto;
+  }
+</style>

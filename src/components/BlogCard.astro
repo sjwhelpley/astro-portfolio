@@ -1,0 +1,46 @@
+---
+import moment from "moment";
+
+const { post } = Astro.props;
+---
+
+<a href={post.url}>
+  <div class="card">
+    <div class="subcard">
+      <img src={post.frontmatter.image.url} style="width: 100%;" />
+      <p class="title">{post.frontmatter.title}</p>
+      <p class="desc">{post.frontmatter.description}</p>
+      <p>{moment(post.frontmatter.pubDate).format("MM/DD/YYYY")}</p>
+    </div>
+  </div></a
+>
+
+<style>
+  .card {
+    background-image: url("../img/texture.jpg");
+    background-size: contain;
+    width: 50%;
+    /* TODO add for small screens */
+    padding: 20px;
+  }
+  .subcard {
+    background-color: #d0eff7;
+    padding-bottom: 10px;
+    text-align: center;
+  }
+  .title {
+    margin: 10px 0px;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #37323e !important;
+  }
+  .desc {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    width: 80%;
+    margin: 0 auto;
+  }
+</style>
