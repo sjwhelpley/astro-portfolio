@@ -2,6 +2,8 @@
 import Footer from "../components/Footer.astro";
 import Nav from "../components/Nav.astro";
 
+import preview from "../img/preview.png";
+
 export interface Props {
   title: string;
 }
@@ -14,8 +16,35 @@ const { title } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta
+      name="Description"
+      content="Samantha Whelpley's web developer portfolio"
+    />
+    <meta property="og:title" content="Samantha Whelpley" />
+    <meta property="og:image" content={preview} />
+    <meta property="og:description" content="Samantha Whelpley's portfolio" />
+    <meta property="og:url" content="https://samwhelpley.me/" />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../img/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../img/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../img/favicon/favicon-16x16.png"
+    />
+
     <meta name="generator" content={Astro.generator} />
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-NSBHWYHFW5"
     ></script>
