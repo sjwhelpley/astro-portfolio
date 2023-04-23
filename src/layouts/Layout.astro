@@ -3,6 +3,10 @@ import Footer from "../components/Footer.astro";
 import Nav from "../components/Nav.astro";
 
 import preview from "../img/preview.png";
+import favicon from '../img/favicon/favicon.ico';
+import favicon16 from '../img/favicon/favicon-16x16.png';
+import favicon32 from '../img/favicon/favicon-32x32.png'
+import appleTouch from '../img/favicon/apple-touch-icon.png';
 
 export interface Props {
   title: string;
@@ -28,20 +32,21 @@ const { title } = Astro.props;
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="../img/favicon/apple-touch-icon.png"
+      href={appleTouch}
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="../img/favicon/favicon-32x32.png"
+      href={favicon32}
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="../img/favicon/favicon-16x16.png"
+      href={favicon16}
     />
+    <link rel="icon" type="image/x-icon" href={favicon} />
 
     <meta name="generator" content={Astro.generator} />
 
