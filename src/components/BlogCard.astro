@@ -4,29 +4,36 @@ import moment from "moment";
 const { post } = Astro.props;
 ---
 
-<a href={post.url}>
-  <div class="card">
+<div class="card">
+  <a href={post.url}>
     <div class="subcard">
       <img src={post.frontmatter.image.url} style="width: 100%;" />
+      <p class="date">
+        {moment(post.frontmatter.pubDate).format("MMMM Do, YYYY")}
+      </p>
       <p class="title">{post.frontmatter.title}</p>
       <p class="desc">{post.frontmatter.description}</p>
-      <p>{moment(post.frontmatter.pubDate).format("MM/DD/YYYY")}</p>
+      <div class="tag-list">
+        {post.frontmatter.tags.map((t) => <div class="tag">{t}</div>)}
+      </div>
     </div>
-  </div></a
->
+  </a>
+</div>
 
 <style>
   .card {
     background-image: url("../img/texture.jpg");
     background-size: contain;
-    width: 50%;
+    width: 33%;
     /* TODO add for small screens */
     padding: 20px;
   }
+  a:hover {
+    opacity: 1 !important;
+  }
   .subcard {
     background-color: #d0eff7;
-    padding-bottom: 10px;
-    text-align: center;
+    padding: 10px;
   }
   .title {
     margin: 10px 0px;
@@ -40,7 +47,21 @@ const { post } = Astro.props;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
-    width: 80%;
-    margin: 0 auto;
+    color: #37323e !important;
+  }
+  .date {
+    font-size: 0.9rem;
+    color: #37323e !important;
+  }
+  .tag-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  .tag {
+    background-color: #37323e;
+    padding: 5px;
+    color: white !important;
   }
 </style>

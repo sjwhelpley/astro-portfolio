@@ -1,14 +1,21 @@
 ---
+import moment from "moment";
 import Layout from "./Layout.astro";
 
-const { frontmatter, title } = Astro.props;
+const { frontmatter } = Astro.props;
 ---
 
 <Layout title={frontmatter.title}>
   <div style="width: 80%; margin: 0 auto;">
-    <img src={frontmatter.image.url} alt={frontmatter.image.alt} style="width: 100%;" />
+    <div style="display: flex; flex-direction: row; justify-content: center;">
+      <img
+        src={`/assets/${frontmatter.image.name}`}
+        alt={frontmatter.image.alt}
+        style="max-height: 25vh; margin: 0 auto;"
+      />
+    </div>
     <h1>{frontmatter.title}</h1>
-    <p>Written by {frontmatter.author}</p>
+    <p>Posted on {moment(frontmatter.pubDate).format("MMMM Do, YYYY")}</p>
     <slot />
   </div>
 </Layout>

@@ -1,0 +1,28 @@
+---
+layout: ../../layouts/PostLayout.astro
+title: Creating my Astro Portfolio
+description: Overview of creating my new portfolio using Astro and why I chose it
+image: 
+  url: "/assets/astro.png"
+  name: astro.png
+  alt: "The “astro” logo against a plain background."
+pubDate: 2023-04-24
+tags: ["astro", "how-to"]
+---
+import Blockquote from '../../components/Blockquote.astro';
+import MarkdownLink from '../../components/MarkdownLink.astro';
+export const components = {blockquote: Blockquote, a: MarkdownLink}
+
+In college, I created my original portfolio site using plain HTML and CSS. It was a great learning experience for me, as I was able to learn a lot of concepts I hadn't used before, like CSS Grid and responsive design. I was soon aware of some of the limitations of using just HTML for a site with multiple pages with similar elements like a navbar and footer on each page. Code reusability is not easily possible in HTML. This differs greatly from the benefits of React, which I have been using daily since I began my career.
+
+I knew I wanted to redo this website using React, or some other similar technology that would be useful to learn. Then recently, I saw Una Kravets share on Twitter about her [new website using Astro.](www.una.im) After looking into it, I thought it would be a great thing to make use of as well, especially for my small static site.
+
+This is a quote from Astro's homepage:
+
+> Astro optimizes your website like no other framework can. Leverage Astro's unique [zero-JS frontend architecture](https://docs.astro.build/en/concepts/islands/) to unlock higher conversion rates with better SEO.
+
+...Zero-JS? As a primarily JavaScript developer, I found this a very interesting idea, though it makes sense - why include the overhead of JavaScript when it just isn't necessary? I wanted to build my portfolio using a modern technology, but I didn't need everything that's packaged up with say, a regular React app. All my content is manually added to the source code, so the only interactive JS I use (for now) is for my theme toggle.
+
+At the same time, it does have the capability to add React support (among many other JS frameworks), which helps speed up my development. But in the end, the browser mostly receives the HTML/CSS.
+
+Astro is similar to a static site generator (or SSG), which means that pages are generated on the server before being passed to the browser. They are rendered at build-time, which makes it optimal for sites with static content. This is what makes it so great for SEO - search engines receive all your content already rendered in the HTML which can help drive up the site's ranking. Want to learn more about React vs SSG for SEO?  Check out this [helpful article by Sam Underwood at ahrefs.](https://ahrefs.com/blog/react-seo/)

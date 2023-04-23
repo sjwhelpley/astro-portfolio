@@ -1,0 +1,14 @@
+---
+const props = Astro.props;
+---
+
+<blockquote {...props}>
+    <slot />
+</blockquote>
+
+<style>
+    blockquote {
+        border-left: 2px solid white;
+        padding-left: 10px;
+    }
+</style>

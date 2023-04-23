@@ -1,26 +1,30 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-import me from "../img/profile.png";
+import floralS from "../img/floral-s.png";
 
-const url = Astro.url.origin
+const url = Astro.url.origin;
 ---
 
-<Layout title='About - samantha Whelpley'>
-  <section class='about-info'>
-    <div class='content'>
-      <img id='profile-pic' src={me} />
+<Layout title="About - samantha Whelpley">
+  <section class="about-info">
+    <div class="content">
+      <img id="about-pic" src={floralS} />
       <h1>Hi! Call me Sam.</h1>
       <p>
         I'm a 2021 graduate of the University of Pittsburgh where I studied
-        Information Science. I currently work at VISIMO in Pittsburgh as a software
-        developer, contributing to a variety of projects using React and Django. Some of
-        my first projects were completed when studying abroad during the summer
-        of 2019, but I've also interned with two Pittsburgh web design agencies, <a
-          class='responsival'
-          href='https://www.responsival.com/'>Responsival</a
+        Information Science. I currently work at VISIMO in Pittsburgh as a
+        software developer, contributing to a variety of projects using React
+        and building wireframes with Figma.
+      </p>
+      <p>
+        Some of my first web programming projects were completed when studying
+        abroad during the summer of 2019, but I've also interned with two
+        Pittsburgh web design agencies, <a
+          class="responsival"
+          href="https://www.responsival.com/">Responsival</a
         >
-        and <a class='redtree' href='https://redtreewebdesign.com/'
+        and <a class="redtree" href="https://redtreewebdesign.com/"
           >RedTree Web Design</a
         >.
       </p>
@@ -34,39 +38,34 @@ const url = Astro.url.origin
       <p>
         I jumped around a number of majors during my years in college, from
         Mathematics to Sociology to Computer Science, but I was drawn to the
-        versatility and innovation present in Information Science. I was able to
-        focus on the areas of web design and development through this program
-        while also gaining exposure to other areas of tech, like database
-        management systems and networks. Combined with my minor in Computer
-        Science and certificate in Digital Media, I have the tools to
-        continually learn and create.
+        versatility and innovation present in the Information Science program. I
+        was able to focus on the areas of web design and development while also
+        gaining exposure to other areas, like database management systems,
+        networking, human factors, and requirements analysis. Combined with my
+        minor in Computer Science and certificate in Digital Media, I have the
+        tools to continually learn and create.
       </p>
-
-      <p>TLDR??</p> {/* Hover with quick summary? */}
     </div>
-    <div class='call-out'>
+    <div class="call-out">
       <h2>
-        I specialize in <span class='highlight'
-          >frontend web development and UI/UX design.
+        I specialize in <span class="highlight"
+          >frontend development and UI/UX design.
         </span>
       </h2>
       <h3>aka React and Figma wizard in the making.</h3>
     </div>
-    <div class='fun-facts content'>
+    <div class="fun-facts content">
       <p>
         ✈️ Originally from the Lake Erie shores in Ohio and current
         Pittsburgher, I love traveling to new places and discovering new things.
         I enjoy exploring National Parks (see my project <a
           href={`${url}/portfolio/explore`}>Explore National Parks</a
-        >) and spent six weeks in South Africa the summer of 2019. I'm grateful
-        for any chance to travel and learn from the world!
+        >) and spent six weeks in South Africa the summer of 2019.
       </p>
       <p>
         🎶 Outside of school and work, band is my pastime. I played piccolo in
         the Pitt Band all four years of college, but I have played flute for
-        over ten years. Music can create the strongest bonds and I have been
-        lucky enough to experience that. I have learned true dedication and
-        pride through those weekly practices and performances.
+        over ten years.
       </p>
     </div>
   </section>
@@ -106,20 +105,20 @@ const url = Astro.url.origin
     padding: 20px 0px;
   }
 
-  #profile-pic {
+  #about-pic {
     width: 50%;
     display: block;
     margin: 0 auto;
-    border-radius: var(--imageHeight) var(--imageHeight) 0px 0px;
+    /* border-radius: var(--imageHeight) var(--imageHeight) 0px 0px; */
   }
 
   @media only screen and (min-width: 1100px) {
-    #profile-pic {
+    #about-pic {
       float: left;
       height: var(--imageHeight);
       width: auto;
       margin: 20px;
-      border-radius: var(--imageHeight) var(--imageHeight) 0px 0px;
+      /* border-radius: var(--imageHeight) var(--imageHeight) 0px 0px; */
     }
   }
 
