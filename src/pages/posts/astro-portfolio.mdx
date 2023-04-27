@@ -11,7 +11,8 @@ tags: ["astro", "how-to"]
 ---
 import Blockquote from '../../components/Blockquote.astro';
 import MarkdownLink from '../../components/MarkdownLink.astro';
-export const components = {blockquote: Blockquote, a: MarkdownLink}
+import MarkdownH1 from '../../components/MarkdownH1.astro';
+export const components = {blockquote: Blockquote, a: MarkdownLink, h1: MarkdownH1}
 
 When I created my first personal website a few years ago, I used plain HTML and CSS. It was a great learning experience for me, as I was able to learn a lot of concepts I hadn't used before, like CSS Grid and media queries. Though it helped my skills in those languages, I was well aware of the limitations of using them for a multi-page site with many similar elements across the pages (like the navbar and footer, for example). There are ways to reuse code 
 (see [this article](https://www.freecodecamp.org/news/reusable-html-components-how-to-reuse-a-header-and-footer-on-a-website/)), but it still requires extensive JavaScript in a more complicated way.

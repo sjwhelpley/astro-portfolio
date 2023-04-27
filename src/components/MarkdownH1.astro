@@ -1,0 +1,11 @@
+---
+const props = Astro.props;
+---
+
+<h1 {...props}><slot /></h1>
+
+<style>
+    h1 {
+        font-family: "Chivo Mono", serif;
+    }
+</style>
