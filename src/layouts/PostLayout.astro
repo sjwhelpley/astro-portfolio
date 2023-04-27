@@ -15,7 +15,7 @@ const { frontmatter } = Astro.props;
       />
     </div>
     <h1>{frontmatter.title}</h1>
-    <p>Posted on {moment(frontmatter.pubDate).format("MMMM Do, YYYY")}</p>
+    <h3>Posted on {moment(frontmatter.pubDate).format("MMMM Do, YYYY")}</h3>
     <slot />
   </div>
 </Layout>
