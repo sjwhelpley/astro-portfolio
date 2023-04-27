@@ -82,23 +82,17 @@ const url = Astro.url.origin;
     --lightpink: #ffddd2;
     --darkpink: #e29578;
     --darkbackground: #37323e;
-
-    --imageHeight: 300px;
   }
-
   .about {
     margin: 20px 0px;
   }
-
   .about-info {
     width: 100%;
   }
-
   .content {
     width: 80%;
     margin: 0 auto;
   }
-
   .call-out {
     width: 100%;
     background-color: var(--lightpink);
@@ -107,24 +101,20 @@ const url = Astro.url.origin;
     margin: 20px 0px;
     padding: 20px;
   }
-
   #about-pic {
     width: 50%;
+    max-width: 300px;
     display: block;
     margin: 0 auto;
-    /* border-radius: var(--imageHeight) var(--imageHeight) 0px 0px; */
   }
-
   @media only screen and (min-width: 1100px) {
     #about-pic {
       float: left;
       height: var(--imageHeight);
       width: auto;
       margin: 20px;
-      /* border-radius: var(--imageHeight) var(--imageHeight) 0px 0px; */
     }
   }
-
   .about-info p {
     margin: 10px 0px;
   }
