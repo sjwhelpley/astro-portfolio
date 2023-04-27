@@ -21,9 +21,13 @@ import SocialMedia from "./SocialMedia.astro";
     justify-content: center;
     align-items: center;
   }
-
   .small-footer-text {
     text-align: center;
     font-size: 1rem;
+  }
+  @media only screen and (max-width: 400px) {
+    .small-footer-text {
+      padding: 0px 20px;
+    }
   }
 </style>
