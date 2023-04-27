@@ -25,8 +25,12 @@ const { post } = Astro.props;
     background-image: url("../img/texture.jpg");
     background-size: contain;
     width: 33%;
-    /* TODO add for small screens */
     padding: 20px;
+  }
+  @media only screen and (max-width: 450px) {
+    .card {
+      width: 100%;
+    }
   }
   a:hover {
     opacity: 1 !important;
