@@ -6,10 +6,10 @@ import floralS from "../img/floral-s.png";
 const url = Astro.url.origin;
 ---
 
-<Layout title="About - samantha Whelpley">
+<Layout title="About - Samantha Whelpley">
   <section class="about-info">
     <div class="content">
-      <img id="about-pic" src={floralS} />
+      <img id="about-pic" src={floralS} alt="Floral S Logo" />
       <h1>Hi! Call me Sam.</h1>
       <p>
         I'm a 2021 graduate of the University of Pittsburgh where I studied
@@ -94,7 +94,6 @@ const url = Astro.url.origin;
     margin: 0 auto;
   }
   .call-out {
-    width: 100%;
     background-color: var(--lightpink);
     color: var(--darkbackground);
     text-align: center;
