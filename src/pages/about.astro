@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 
 import floralS from "../img/floral-s.png";
+import { Image } from "astro:assets";
 
 const url = Astro.url.origin;
 ---
@@ -9,18 +10,18 @@ const url = Astro.url.origin;
 <Layout title="About - Samantha Whelpley">
   <section class="about-info">
     <div class="content">
-      <img id="about-pic" src={floralS} alt="Floral S Logo" />
+      <Image id="about-pic" src={floralS} alt="S made out of flowers" />
       <h1>Hi! Call me Sam.</h1>
       <p>
-        I'm a 2021 graduate of the University of Pittsburgh where I studied
-        Information Science. I currently work at VISIMO in Pittsburgh as a
-        software developer, contributing to a variety of projects using React
-        and building wireframes with Figma.
+        I graduated from the University of Pittsburgh in 2021 with a degree in
+        Information Science. Still located in Pittsburgh, I currently work at
+        VISIMO as a software developer, contributing to a variety of projects
+        using React and building wireframes with Figma.
       </p>
       <p>
         Some of my first web programming projects were completed when studying
-        abroad during the summer of 2019, but I've also interned with two
-        Pittsburgh web design agencies, <a
+        abroad during the summer of 2019, but I also interned with two
+        Pittsburgh web design agencies during college, <a
           class="responsival"
           href="https://www.responsival.com/">Responsival</a
         >
@@ -32,29 +33,49 @@ const url = Astro.url.origin;
         I am passionate about the design and development process and
         understanding the people behind technological solutions. My primary
         skills are in frontend development using React and React Native. At the
-        same time, I am always improving my JavaScript and Python backend
-        skills.
+        same time, I am always improving my backend skills, primarily with
+        Python and Django.
       </p>
       <p>
-        I jumped around a number of majors during my years in college, from
-        Mathematics to Sociology to Computer Science, but I was drawn to the
-        versatility and innovation present in the Information Science program. I
-        was able to focus on the areas of web design and development while also
-        gaining exposure to other areas, like database management systems,
-        networking, human factors, and requirements analysis. Combined with my
-        minor in Computer Science and certificate in Digital Media, I have the
-        tools to continually learn and create.
+        My strengths lie in determining and executing technical requirements
+        based on user needs. Additionally, I am detail-oriented, which benefits
+        my contributions to project planning and debugging. In my current
+        position, I am the lead software developer, so I help manage budgets and
+        determine the tasks and staffing across the variety of projects. I am
+        also technical leads of indiivdual projects, where I contribute to
+        client communication, project management, and overall guiding the
+        direction of the software side of the project. Depending on the project,
+        I also interact with Data Scientists to translate requirements in order
+        to integrate the software with the AI/ML components.
+      </p>
+      <p>
+        Working on a small team with limited other frontend developers has
+        showcased my ability to solve complex problems, and plan and execute
+        internal initiatives for the benefit of the development process. When I
+        first began working at VISIMO, we created our projects using Create
+        React App, but in 2023, I took the opportunity to update the frontend
+        project templates to use Vite. When one of our Army projects required
+        unit test coverage, I lead the initiative to learn and implement testing
+        on that project, and incrementally add it to our other projects.
+        Originally I used Jest, but now with Vite, we use Vitest. Due to this
+        work, we have added unit testing as a part of the development process
+        whether there are external requirements or not. I was also the developer
+        that first suggested using Progressive Web Applications (PWAs) instead
+        of depending on native applications for offline-first projects. I now
+        have strong knowledge of PWAs and use the Redux Offline package to
+        create applications that work smoothly offline, which is a valuable
+        selling point for many of our projects - I've worked on 3 PWAs in the
+        past year.
       </p>
     </div>
     <div class="call-out">
-      <h2>
-        I specialize in <span class="highlight"
-          >frontend development and UI/UX design.
-        </span>
-      </h2>
-      <h3>aka React and Figma wizard in the making.</h3>
+      <h3>I specialize in:</h3>
+      <p>Frontend development with React and React Native</p>
+      <p>Progressive Web Applications (PWAs)</p>
+      <p>Wireframing using Figma</p>
     </div>
     <div class="fun-facts content">
+      <h3>Fun Facts:</h3>
       <p>
         ✈️ Originally from the Lake Erie shores in Ohio and current
         Pittsburgher, I love traveling to new places and discovering new things.

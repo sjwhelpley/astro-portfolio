@@ -1,113 +1,169 @@
 ---
+import ExperienceItem from "../components/Resume/ExperienceItem";
 import Layout from "../layouts/Layout.astro";
 
 const url = Astro.url.origin;
 ---
 
-<Layout title='Resume - Samantha Whelpley'>
-  <section class='c12 intro'>
+<Layout title="Resume - Samantha Whelpley">
+  <section class="c12 intro">
     <h1>Resume</h1>
-    <h2 class='intro-details'>
+    <h2 class="intro-details">
       Download it <a
-        class='highlight'
-        href='https://drive.google.com/file/d/1UUBhiEDCTwcNKge1NSQqcla8IIgaOBgd/view?usp=sharing'
-        target='_blank'>here.</a
+        class="highlight"
+        href="https://drive.google.com/file/d/1UUBhiEDCTwcNKge1NSQqcla8IIgaOBgd/view?usp=sharing"
+        target="_blank">here.</a
       >
     </h2>
   </section>
-  <main class='c8-center resume'>
+  <main class="c8-center resume">
+    <div class="line"></div>
+
     <!-- EXPERIENCE -->
     <h3>Experience</h3>
 
-    <h2>VISIMO</h2>
-    <p>Software Developer II // September 2023 - Present</p>
-    <br />
-    <p>More details to come.</p>
-    <br />
+    <ExperienceItem
+      company="VISIMO"
+      positions={[
+        {
+          position_title: "Software Developer II",
+          position_start: "September 2023",
+          position_end: "Present",
+          details: ["test item 1", "test item 2"],
+        },
+        {
+          position_title: "Software Developer I",
+          position_start: "May 2021",
+          position_end: "September 2023",
+          details: ["test item 1"],
+        },
+      ]}
+    />
 
-    <p>Software Developer I // May 2021 - September 2023</p>
-    <br />
-    <p>More details to come.</p>
+    <ExperienceItem
+      company="University of Pittsburgh School of Computing and Information"
+      positions={[
+        {
+          position_title: "WiCS Web Developer",
+          position_start: "November 2020",
+          position_end: "May 2021",
+          details: [
+            "Redesigned and built the website for Pitt's Women in Computer Science club.",
+          ],
+          relevant_link: {
+            href: "https://wics.cs.pitt.edu/",
+            text: "Pitt WiCS website",
+          },
+        },
+      ]}
+    />
 
-    <h2>University of Pittsburgh<br />School of Computing and Information</h2>
-    <p>WiCS Web Developer // November 2020 - May 2021</p>
-    <br />
-    <p>
-      Redesigned and built the website for Pitt's Women in Computer Science
-      club! View the finished product here: <a
-        class='highlight'
-        href='https://wics.cs.pitt.edu/'>wics.cs.pitt.edu</a
-      >
-    </p>
+    <ExperienceItem
+      company="RedTree Web Design"
+      positions={[
+        {
+          position_title: "Web Design Intern",
+          position_start: "May 2020",
+          position_end: "August 2020",
+          details: [
+            "Designed and developed prioriTask, a responsive task management web application using the MERN stack. The wireframes were designed with Adobe XD.",
+          ],
+          relevant_link: {
+            href: `${url}/portfolio/prioritask`,
+            text: "Portfolio: prioriTask",
+          },
+        },
+      ]}
+    />
 
-    <h2>Pittsburgh Quantum Institute</h2>
-    <p>Computer Technician // October 2020 - May 2021</p>
+    <ExperienceItem
+      company="Responsival"
+      positions={[
+        {
+          position_title: "Design Assistant",
+          position_start: "May 2020",
+          position_end: "August 2020",
+          details: [
+            "Created a case study for designing a platform Explore National Parks, a web application for trip tracking and organizing information on America's National Parks.",
+          ],
+          relevant_link: {
+            href: `${url}/portfolio/explore`,
+            text: "Portfolio: Explore National Parks",
+          },
+        },
+      ]}
+    />
 
-    <h2>RedTree Web Design</h2>
-    <p>Web Design Intern // May 2020 - August 2020</p>
-    <br />
-    <p>
-      Designed and developed <a class='highlight' href={`${url}/portfolio/prioritask`}
-        >prioriTask</a
-      >, a responsive task management web application using Adobe XD and React.
-    </p>
+    <ExperienceItem
+      company="Nourish'd"
+      positions={[
+        {
+          position_title: "Full Stack Developer Intern",
+          position_start: "June 2019",
+          position_end: "September 2019",
+          details: [
+            "Collaborated with five other interns to develop Nourish'd Café and Juicery's cross-platform mobile app using the Ionic v4 framework and Shopify Storefront API with Node.js and GraphQL.",
+          ],
+          relevant_link: {
+            href: `${url}/portfolio/nourishd`,
+            text: "Portfolio: Nourish'd",
+          },
+        },
+      ]}
+    />
 
-    <h2>Responsival</h2>
-    <p>Design Assistant // May 2020 - August 2020</p>
-    <br />
-    <p>
-      Created a case study for designing a platform <a
-        class='highlight'
-        href={`${url}/portfolio/explore`}>Explore National Parks</a
-      >, a web application for trip tracking and organizing information on
-      America's National Parks.
-    </p>
-
-    <h2>Nourish'd</h2>
-    <p>Full-Stack Developer Intern // June 2019 - September 2019</p>
-    <br />
-    <p>
-      Collaborated with five other interns to develop <a
-        class='highlight'
-        href={`${url}/portfolio/nourishd`}
-        >Nourish'd Café and Juicery's cross-platform mobile app</a
-      > using the Ionic v4 framework and Shopify Storefront API with Node.js and
-      GraphQL.
-    </p>
+    <div class="line"></div>
 
     <!-- EDUCATION -->
     <h3>Education</h3>
 
-    <h2>University of Pittsburgh</h2>
-    <p>B.S. Information Science // April 2021</p>
-    <br />
-    <p>Concentration in Human-centered Computing</p>
-    <p>Minor in Computer Science, Certificate in Digital Media</p>
-    <p>GPA: 3.8/4.0</p>
+    <ExperienceItem
+      company="University of Pittsburgh"
+      positions={[
+        {
+          position_title: "B.S. Information Science",
+          position_start: "August 2017",
+          position_end: "April 2021",
+          details: [
+            "Concentration in Human-Centered Computing",
+            "Minor in Computer Science, Certificate in Digital Media",
+            "GPA: 3.81/4.00",
+          ],
+        },
+      ]}
+    />
 
-    <h2>iXperience</h2>
-    <p>Cape Town, South Africa // June 2019 - August 2019</p>
-    <br />
-    <p>
-      6-week study abroad program studying Full-Stack Coding and completing an
-      internship
-    </p>
-    <p>
-      Coursework included independent project building <a
-        class='highlight'
-        href={`${url}/portfolio/bnb`}>full-stack Angular applications</a
-      >
-    </p>
-    <p>University of Virginia accredited</p>
+    <ExperienceItem
+      company="iXperience"
+      positions={[
+        {
+          position_title: "Cape Town, South Africa",
+          position_start: "June 2019",
+          position_end: "August 2019",
+          details: [
+            "6-week study abroad program studying Full-Stack Coding and completing an internship",
+            "Coursework included an individual full-stack Angular project",
+            "University of Virginia accredited",
+          ],
+          relevant_link: {
+            href: `${url}/portfolio/bnb`,
+            text: "Portfolio: bnb",
+          },
+        },
+      ]}
+    />
 
+    <div class="line"></div>
+
+    <!-- SKILLS -->
     <h3>Skills</h3>
     <h2>Languages</h2>
-    <div class='skill-list'>
+    <div class="skill-list">
       <p>HTML | CSS | JavaScript | Python</p>
     </div>
 
     <h2>Frameworks & Libraries</h2>
-    <div class='skill-list'>
+    <div class="skill-list">
       <p>Frontend: React & React Native | Astro.js | Vite | Angular | Ionic</p>
       <p>State Management: Redux | Apollo Client v3</p>
       <p>Testing: Jest | Enzyme | React Testing Library | Vitest</p>
@@ -116,22 +172,25 @@ const url = Astro.url.origin;
     </div>
 
     <h2>Tools</h2>
-    <div class='skill-list'>
+    <div class="skill-list">
       <p>Programming: Visual Studio Code | Git | Sublime Merge</p>
-      <p>Design: Figma | Adobe CC (XD, Illustrator, Premiere Pro) </p>
+      <p>Design: Figma | Adobe CC (XD, Illustrator, Premiere Pro)</p>
     </div>
 
+    <div class="line"></div>
+
+    <!-- ACTIVITIES -->
     <h3>Activities</h3>
     <h2>
-      <a href='https://www.pittkappathetapi.com/home'
+      <a href="https://www.pittkappathetapi.com/home"
         >Kappa Theta Pi (professional technology fraternity)</a
       >
     </h2>
     <p>Development Team Member // March 2019 - April 2021</p>
     <br />
     <p>
-      Participated in technology career-oriented events and at least 10 community
-      service hours each semester
+      Participated in technology career-oriented events and at least 10
+      community service hours each semester
     </p>
     <p>
       Worked on the Dev Team to improve chapter website used for attendence and
@@ -140,7 +199,7 @@ const url = Astro.url.origin;
     </p>
 
     <h2>
-      <a href='http://pittband.com/index.aspx'
+      <a href="http://pittband.com/index.aspx"
         >University of Pittsburgh Varsity Marching Band</a
       >
     </h2>
@@ -150,9 +209,9 @@ const url = Astro.url.origin;
     </p>
     <br />
     <p>
-      Was responsible for leading a section of 30+ members, ensuring quality control
-      and marching consistency during practice and performances and being a main
-      point of contact with band leadership.
+      Was responsible for leading a section of 30+ members, ensuring quality
+      control and marching consistency during practice and performances and
+      being a main point of contact with band leadership.
     </p>
     <p>
       Practiced over 8 hours a week and participate in at least 10 performances
@@ -160,7 +219,7 @@ const url = Astro.url.origin;
     </p>
 
     <h2>
-      <a href='https://tbspitt.wixsite.com/gammaomega'
+      <a href="https://tbspitt.wixsite.com/gammaomega"
         >Tau Beta Sigma (national band service sorority)</a
       >
     </h2>
@@ -173,13 +232,18 @@ const url = Astro.url.origin;
       and local community each semester.
     </p>
     <p>
-      Planned events that promoted leadership, music appreciation, and diversity,
-      specifically for women in the music profession.
+      Planned events that promoted leadership, music appreciation, and
+      diversity, specifically for women in the music profession.
     </p>
   </main>
 </Layout>
 
 <style>
+  .line {
+    width: 100%;
+    border-bottom: 1px dashed pink;
+    margin-top: 30px;
+  }
   .intro {
     text-align: center;
   }
