@@ -1,0 +1,74 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<div style={{ display: "flex", flexDirection: "row" }}>
+  <button id="light-button" class="sun">
+    <Icon name="line-md:sun-rising-loop" id="light" />
+  </button>
+  <button id="dark-button" class="moon">
+    <Icon name="line-md:moon-alt-loop" id="dark" />
+  </button>
+</div>
+
+<style>
+  [data-icon="line-md:sun-rising-loop"],
+  [data-icon="line-md:moon-alt-loop"] {
+    font-size: 2rem;
+  }
+  [data-icon="line-md:sun-rising-loop"] {
+    color: var(--sun-color);
+  }
+  [data-icon="line-md:moon-alt-loop"] {
+    color: var(--moon-color);
+  }
+  .sun,
+  .moon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0px 8px;
+  }
+</style>
+
+<script is:inline>
+  function init() {
+    const darkButton = document.querySelector("#dark-button");
+    const lightButton = document.querySelector("#light-button");
+
+    function changeTheme(theme) {
+      document.documentElement.setAttribute("data-theme", theme);
+    }
+
+    function saveTheme(theme) {
+      const d = new Date();
+      d.setTime(d.getTime() + 365 * 86400000);
+      document.cookie = `theme=${theme};expires=${d.toUTCString()}`;
+    }
+
+    function handleThemeClick(e) {
+      console.log(e.target);
+      changeTheme(e.target.id);
+      saveTheme(e.target.id);
+    }
+
+    darkButton.addEventListener("click", handleThemeClick);
+    lightButton.addEventListener("click", handleThemeClick);
+
+    // Clean up by destroying instances and removing event listeners
+    document.addEventListener(
+      "astro:before-swap",
+      () => {
+        darkButton.removeEventListener("click", handleThemeClick);
+        lightButton.removeEventListener("click", handleThemeClick);
+      },
+      { once: true }
+    );
+  }
+
+  // Initialize on first load
+  init();
+
+  // Re-initialize after swapping pages
+  document.addEventListener("astro:after-swap", init);
+</script>

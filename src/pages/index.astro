@@ -8,54 +8,31 @@ import prioritask from "../img/prioritask.png";
 import explore from "../img/explore-preview.png";
 import nourishd from "../img/nourishd.png";
 import bnb from "../img/bnb-consumer.png";
+import calc from "../img/calc.png";
+import MyTypingAnimation from "../components/TypingAnimation";
 ---
 
-<Layout title='Samantha Whelpley'>
-  <section class='c12 intro'>
+<Layout title="Samantha Whelpley">
+  <section class="c12 intro">
     <h1>Hey, I'm Sam!</h1>
-    <h1>
-      I'm a <span class='highlight'>frontend software developer</span>
-    </h1>
+    <MyTypingAnimation client:load />
 
     <SocialMedia />
   </section>
-  <main class='c12 portfolio'>
-    <Card
-      title='Spotify Playlist Generator'
-      subtitle='CS1520: Web Applications'
-      body='Flask application built with a team that connects to the Spotify API and generates a playlist based on answers to a survey.'
-      src={spotify}
-      href='/portfolio/spotify'
-    />
-    <Card
-      title='prioriTask'
-      subtitle='RedTree Web Design'
-      body='Task management application developed with Material UI and the MERN tech stack (MongoDB, Express, React, Node.js).'
-      src={prioritask}
-      href='/portfolio/prioritask'
-    />
-    <Card
-      title='Explore National Parks'
-      subtitle='Responsival'
-      body='National Park travel resource and trip tracker designed and prototyped with Adobe XD.'
-      src={explore}
-      href='/portfolio/explore'
-    />
-    <Card
-      title='Nourishd Mobile Store'
-      subtitle='Nourishd Cafe and Juicery'
-      body='Mobile app built with Angular/Ionic and the Shopify Storefront API to optimize the mobile shopping experience.'
-      src={nourishd}
-      href='/portfolio/nourishd'
-    />
-    <Card
-      title='bnb'
-      subtitle='iXperience'
-      body='A full-stack home-rental system built with Angular/Ionic, Node.js, Express, and MySQL.'
-      src={bnb}
-      href='/portfolio/bnb'
-    />
-  </main>
+  <div class="content">
+    <main class="c12 portfolio">
+      <Card
+        title="Themed Calculator"
+        subtitle="FrontendMentor"
+        body="React application using CSS variables to handle multiple themes."
+        skills="React // CSS // Vercel"
+        src={calc}
+        github="https://github.com/sjwhelpley/frontendmentor-calculator-app"
+        externalLink="https://frontendmentor-calculator-r3813x2ib-samantha-whelpleys-projects.vercel.app/"
+        leftImage={true}
+      />
+    </main>
+  </div>
 </Layout>
 
 <style>
@@ -66,6 +43,10 @@ import bnb from "../img/bnb-consumer.png";
     line-height: 1.5em;
     margin: 10px 0 10px 0;
   }
+  .heading {
+    text-align: center;
+    font-size: 18px;
+  }
   .highlight {
     background: linear-gradient(
       180deg,
@@ -75,9 +56,16 @@ import bnb from "../img/bnb-consumer.png";
     display: inline;
   }
   .portfolio {
-    display: grid;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
     padding: 20px;
     margin: 0 auto;
     max-width: 1200px;
+  }
+  .content {
+    width: 80%;
+    margin: 0 auto;
   }
 </style>

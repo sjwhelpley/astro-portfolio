@@ -1,4 +1,6 @@
 ---
+import { ViewTransitions } from "astro:transitions";
+
 import Footer from "../components/Footer.astro";
 import Nav from "../components/Nav.astro";
 
@@ -12,10 +14,12 @@ export interface Props {
 }
 
 const { title } = Astro.props;
+
+const theme = Astro.cookies.get("theme")?.value ?? "system";
 ---
 
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-theme={theme}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -30,28 +34,34 @@ const { title } = Astro.props;
     <meta property="og:url" content="https://samwhelpley.me/" />
 
     <meta property="twitter:title" content="Samantha Whelpley" />
-    <meta property="twitter:image" content="https://i.ibb.co/GpTsBcN/preview.png" />
+    <meta
+      property="twitter:image"
+      content="https://i.ibb.co/GpTsBcN/preview.png"
+    />
     <meta
       property="twitter:description"
       content="Samantha Whelpley's portfolio"
     />
     <meta property="twitter:url" content="https://samwhelpley.me/" />
 
-    <link rel="apple-touch-icon" sizes="180x180" href={appleTouch} />
-    <link rel="icon" type="image/png" sizes="32x32" href={favicon32} />
-    <link rel="icon" type="image/png" sizes="16x16" href={favicon16} />
+    <link rel="apple-touch-icon" sizes="180x180" href={appleTouch.src} />
+    <link rel="icon" type="image/png" sizes="32x32" href={favicon32.src} />
+    <link rel="icon" type="image/png" sizes="16x16" href={favicon16.src} />
     <link rel="icon" type="image/x-icon" href={favicon} />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chivo+Mono&display=swap"
+      rel="stylesheet"
+    />
 
     <meta name="generator" content={Astro.generator} />
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-NSBHWYHFW5"
     ></script>
-    <script>
+    <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
@@ -60,191 +70,255 @@ const { title } = Astro.props;
 
       gtag("config", "G-NSBHWYHFW5");
     </script>
+
     <title>{title}</title>
+
+    <ViewTransitions />
   </head>
   <body>
     <Nav />
     <slot />
     <Footer />
+
+    <style is:global>
+      :root {
+        --lightblue: #edf6f9;
+        --medblue: #83c5be;
+        --darkblue: #006d77;
+        --lightpink: #ffddd2;
+        --darkpink: #e29578;
+        --darkpurple: #37323e;
+
+        --background: var(--lightblue);
+        --moon-color: var(--lightpink);
+        --sun-color: var(--darkpink);
+        --text-color: black;
+        --card-background: var(--darkblue);
+        --card-text-color: white;
+
+        color-scheme: light;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --background: var(--darkpurple);
+          --moon-color: var(--darkpink);
+          --sun-color: var(--lightpink);
+          --text-color: white;
+          --card-background: #7a6f8a;
+          --card-text-color: black;
+
+          color-scheme: dark;
+        }
+      }
+
+      [data-theme="dark"] {
+        --background: var(--darkpurple);
+        --moon-color: var(--darkpink);
+        --sun-color: var(--lightpink);
+        --text-color: white;
+        --card-background: #7a6f8a;
+        --card-text-color: black;
+
+        color-scheme: dark;
+      }
+
+      [data-theme="light"] {
+        --background: var(--lightblue);
+        --moon-color: var(--lightpink);
+        --sun-color: var(--darkpink);
+        --text-color: black;
+        --card-background: var(--darkblue);
+        --card-text-color: white;
+
+        color-scheme: light;
+      }
+
+      html {
+        background-color: var(--background);
+      }
+      code {
+        font-family:
+          Menlo,
+          Monaco,
+          Lucida Console,
+          Liberation Mono,
+          DejaVu Sans Mono,
+          Bitstream Vera Sans Mono,
+          Courier New,
+          monospace;
+      }
+      body {
+        font-family: "Roboto", sans-serif;
+        margin: 0;
+      }
+      button,
+      input[type="submit"],
+      input[type="reset"] {
+        background: none;
+        color: inherit;
+        border: none;
+        padding: 0;
+        font: inherit;
+        cursor: pointer;
+        outline: inherit;
+      }
+      h2,
+      h4 {
+        font-family: "Work Sans", sans-serif;
+      }
+      h1 {
+        font-family: "Chivo Mono", serif;
+        font-size: 2rem;
+        font-weight: 400;
+      }
+      h2 {
+        font-size: 1.75rem;
+        font-weight: 500;
+      }
+      h3 {
+        font-family: "Montserrat", sans-serif;
+        font-size: 1.5rem;
+        font-weight: 400;
+        text-transform: uppercase;
+      }
+      h4 {
+        font-size: 1.4rem;
+        font-weight: 600;
+      }
+      p,
+      ol,
+      li,
+      figcaption {
+        font-family: "Montserrat", sans-serif;
+        font-size: 1.3rem;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      a:hover {
+        opacity: 0.6;
+        transition: opacity linear 0.2s;
+      }
+      .highlight {
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0) 50%,
+          rgba(0, 109, 119, 0.1) 50%
+        );
+        display: inline;
+      }
+      .highlight-callout {
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0) 50%,
+          rgba(226, 149, 120, 0.1) 50%
+        ) !important;
+        display: inline;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .c-all {
+        grid-column: 1 / span 12;
+      }
+      .c12 {
+        grid-column: 2 / 12;
+      }
+      .c6 {
+        grid-column: 4 / 10;
+      }
+      .c6-left {
+        grid-column: 2 / 7;
+      }
+      .c6-right {
+        grid-column: 7 / 12;
+      }
+      .c8-center {
+        grid-column: 3 / 11;
+      }
+      .content-web {
+        display: none;
+      }
+      .content-mobile {
+        display: inline;
+      }
+
+      /* DARK MODE */
+      /* .dark {
+        background-color: var(--darkbackground);
+        color: var(--lightblue);
+      }
+      .dark .sun {
+        display: none;
+      }
+      .dark .moon {
+        display: block;
+      }
+      .dark .nav-links {
+        color: var(--lightblue);
+      }
+      .dark .active {
+        border-bottom: 1px solid white;
+      }
+      .dark .sticky {
+        color: var(--lightblue);
+        background-color: var(--darkbackground);
+      }
+      .dark .highlight {
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0) 50%,
+          rgba(226, 149, 120, 0.1) 50%
+        ) !important;
+        display: inline;
+      }
+      .dark .social-media a:hover {
+        color: var(--lightpink);
+        transition: color linear 0.2s;
+      }
+      .dark .social-media a {
+        border-bottom: 0.5px solid white !important;
+        transition: color linear 0.2s;
+      }
+      .dark blockquote {
+        border-left: 2px solid !important;
+        padding-left: 10px;
+      } */
+
+      @media only screen and (min-width: 550px) {
+        .content-mobile {
+          display: none;
+        }
+
+        .grid {
+          grid-template-columns: repeat(12, minmax(0, 1fr));
+        }
+
+        .about-paragraphs {
+          padding: 0;
+          margin: 0;
+        }
+
+        .skills {
+          grid-template-columns: 50% 50%;
+        }
+      }
+
+      @media only screen and (min-width: 1100px) {
+        .content-web {
+          display: inline;
+        }
+
+        /* Portfolio */
+        .portfolio {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          grid-column-gap: 3vw;
+          grid-row-gap: 3vw;
+        }
+      }
+    </style>
   </body>
 </html>
-
-<script is:inline>
-  const theme = (() => {
-    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
-      return localStorage.getItem("theme");
-    }
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      return "dark";
-    }
-    return "light";
-  })();
-
-  if (theme === "light") {
-    document.documentElement.classList.remove("dark");
-  } else {
-    document.documentElement.classList.add("dark");
-  }
-  window.localStorage.setItem("theme", theme);
-</script>
-
-<style is:global>
-  :root {
-    --lightblue: #edf6f9;
-    --medblue: #83c5be;
-    --darkblue: #006d77;
-    --lightpink: #ffddd2;
-    --darkpink: #e29578;
-    --darkbackground: #37323e;
-  }
-  html {
-    background-color: #f6f6f6;
-  }
-  code {
-    font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-      DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-  }
-  body {
-    font-family: "Roboto", sans-serif;
-    margin: 0;
-  }
-  h2,
-  h4 {
-    font-family: "Work Sans", sans-serif;
-  }
-  h1 {
-    font-family: "Chivo Mono", serif;
-    font-size: 2rem;
-    font-weight: 400;
-  }
-  h2 {
-    font-size: 1.75rem;
-    font-weight: 500;
-  }
-  h3 {
-    font-family: "Montserrat", sans-serif;
-    font-size: 1.5rem;
-    font-weight: 400;
-    text-transform: uppercase;
-  }
-  h4 {
-    font-size: 1.4rem;
-    font-weight: 600;
-  }
-  p,
-  ol,
-  li,
-  figcaption {
-    font-family: "Montserrat", sans-serif;
-    font-size: 1.3rem;
-  }
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-  a:hover {
-    opacity: 0.6;
-    transition: opacity linear 0.2s;
-  }
-  .highlight {
-    background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0) 50%,
-      rgba(0, 109, 119, 0.1) 50%
-    );
-    display: inline;
-  }
-  .grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-  }
-  .c-all {
-    grid-column: 1 / span 12;
-  }
-  .c12 {
-    grid-column: 2 / 12;
-  }
-  .c6 {
-    grid-column: 4 / 10;
-  }
-  .c6-left {
-    grid-column: 2 / 7;
-  }
-  .c6-right {
-    grid-column: 7 / 12;
-  }
-  .c8-center {
-    grid-column: 3 / 11;
-  }
-  .content-web {
-    display: none;
-  }
-  .content-mobile {
-    display: inline;
-  }
-
-  /* DARK MODE */
-  .dark {
-    background-color: var(--darkbackground);
-    color: var(--lightblue);
-  }
-  .dark .nav-links {
-    color: var(--lightblue);
-  }
-  .dark .sticky {
-    color: var(--lightblue);
-    background-color: var(--darkbackground);
-  }
-  .dark .highlight {
-    background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0) 50%,
-      rgba(226, 149, 120, 0.1) 50%
-    ) !important;
-    display: inline;
-  }
-  .dark .social-media a:hover {
-    color: var(--lightpink);
-    transition: color linear 0.2s;
-  }
-  .dark .social-media a {
-    border-bottom: 0.5px solid white !important;
-    transition: color linear 0.2s;
-  }
-  .dark blockquote {
-    border-left: 2px solid !important;
-    padding-left: 10px;
-  }
-
-  @media only screen and (min-width: 550px) {
-    .content-mobile {
-      display: none;
-    }
-
-    .grid {
-      grid-template-columns: repeat(12, minmax(0, 1fr));
-    }
-
-    .about-paragraphs {
-      padding: 0;
-      margin: 0;
-    }
-
-    .skills {
-      grid-template-columns: 50% 50%;
-    }
-  }
-
-  @media only screen and (min-width: 1100px) {
-    .content-web {
-      display: inline;
-    }
-
-    /* Portfolio */
-    .portfolio {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      grid-column-gap: 3vw;
-      grid-row-gap: 3vw;
-    }
-  }
-</style>
