@@ -8,13 +8,13 @@ const url = Astro.url.origin;
 <Layout title="Resume - Samantha Whelpley">
   <section class="c12 intro">
     <h1>Resume</h1>
-    <h2 class="intro-details">
+    <!-- TODO <h2 class="intro-details">
       Download it <a
         class="highlight"
         href="https://drive.google.com/file/d/1UUBhiEDCTwcNKge1NSQqcla8IIgaOBgd/view?usp=sharing"
         target="_blank">here.</a
       >
-    </h2>
+    </h2> -->
   </section>
   <main class="c8-center resume">
     <div class="line"></div>
@@ -29,13 +29,13 @@ const url = Astro.url.origin;
           position_title: "Software Developer II",
           position_start: "September 2023",
           position_end: "Present",
-          details: ["test item 1", "test item 2"],
+          details: [],
         },
         {
           position_title: "Software Developer I",
           position_start: "May 2021",
           position_end: "September 2023",
-          details: ["test item 1"],
+          details: [],
         },
       ]}
     />
@@ -239,9 +239,12 @@ const url = Astro.url.origin;
 </Layout>
 
 <style>
+  h2 {
+    margin: 8px 0px;
+  }
   .line {
     width: 100%;
-    border-bottom: 1px dashed pink;
+    border-bottom: 1px dashed var(--darkpink);
     margin-top: 30px;
   }
   .intro {
@@ -265,7 +268,7 @@ const url = Astro.url.origin;
     padding: 30px 0 5px 0;
   }
   .resume p {
-    margin-bottom: 10px;
+    margin: 10px 0px;
   }
   .skill-list {
     display: flex;

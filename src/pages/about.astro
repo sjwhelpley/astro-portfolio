@@ -69,7 +69,7 @@ const url = Astro.url.origin;
       </p>
     </div>
     <div class="call-out">
-      <h3>I specialize in:</h3>
+      <h2>I specialize in...</h2>
       <p>Frontend development with React and React Native</p>
       <p>Progressive Web Applications (PWAs)</p>
       <p>Wireframing using Figma</p>
@@ -77,16 +77,13 @@ const url = Astro.url.origin;
     <div class="fun-facts content">
       <h3>Fun Facts:</h3>
       <p>
-        ✈️ Originally from the Lake Erie shores in Ohio and current
-        Pittsburgher, I love traveling to new places and discovering new things.
-        I enjoy exploring National Parks (see my project <a
-          href={`${url}/portfolio/explore`}>Explore National Parks</a
-        >) and spent six weeks in South Africa the summer of 2019.
+        ✈ I love traveling to new places and discovering new things. I spent
+        six weeks studying abroad in South Africa the summer of 2019, and have
+        made sure to continue experiencing new cities and countries since!
       </p>
       <p>
-        🎶 Outside of school and work, band is my pastime. I played piccolo in
-        the Pitt Band all four years of college, but I have played flute for
-        over ten years.
+        ♫ I love music! I played piccolo in the Pitt Band all four years of
+        college, and have played flute for over ten years.
       </p>
     </div>
 
@@ -96,14 +93,6 @@ const url = Astro.url.origin;
 </Layout>
 
 <style>
-  :root {
-    --lightblue: #edf6f9;
-    --medblue: #83c5be;
-    --darkblue: #006d77;
-    --lightpink: #ffddd2;
-    --darkpink: #e29578;
-    --darkbackground: #37323e;
-  }
   .about {
     margin: 20px 0px;
   }
@@ -116,22 +105,20 @@ const url = Astro.url.origin;
   }
   .call-out {
     background-color: var(--lightpink);
-    color: var(--darkbackground);
+    color: var(--darkpurple);
     text-align: center;
     margin: 20px 0px;
     padding: 20px;
   }
   #about-pic {
-    width: 50%;
-    max-width: 300px;
+    width: 30%;
+    height: auto;
     display: block;
     margin: 0 auto;
   }
   @media only screen and (min-width: 1100px) {
     #about-pic {
       float: left;
-      height: var(--imageHeight);
-      width: auto;
       margin: 20px;
     }
   }

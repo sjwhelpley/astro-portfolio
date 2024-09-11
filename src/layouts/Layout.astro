@@ -87,31 +87,38 @@ const theme = Astro.cookies.get("theme")?.value ?? "system";
         --darkblue: #006d77;
         --lightpink: #ffddd2;
         --darkpink: #e29578;
-        --darkbackground: #37323e;
+        --darkpurple: #37323e;
 
-        --background: var(--darkpink);
+        --background: var(--lightblue);
         --moon-color: var(--lightpink);
         --sun-color: var(--darkpink);
         --text-color: black;
+        --card-background: var(--darkblue);
+        --card-text-color: white;
+
         color-scheme: light;
       }
 
       @media (prefers-color-scheme: dark) {
         :root {
-          --background: var(--darkbackground);
+          --background: var(--darkpurple);
           --moon-color: var(--darkpink);
           --sun-color: var(--lightpink);
           --text-color: white;
+          --card-background: #7a6f8a;
+          --card-text-color: black;
 
           color-scheme: dark;
         }
       }
 
       [data-theme="dark"] {
-        --background: var(--darkbackground);
+        --background: var(--darkpurple);
         --moon-color: var(--darkpink);
         --sun-color: var(--lightpink);
         --text-color: white;
+        --card-background: #7a6f8a;
+        --card-text-color: black;
 
         color-scheme: dark;
       }
@@ -121,6 +128,8 @@ const theme = Astro.cookies.get("theme")?.value ?? "system";
         --moon-color: var(--lightpink);
         --sun-color: var(--darkpink);
         --text-color: black;
+        --card-background: var(--darkblue);
+        --card-text-color: white;
 
         color-scheme: light;
       }

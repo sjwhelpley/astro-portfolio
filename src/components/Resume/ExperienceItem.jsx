@@ -12,20 +12,6 @@ export default function ExperienceItem({ company, positions }) {
               <li>{d}</li>
             ))}
           </ul>
-          {p.relevant_link && (
-            <>
-              <p>
-                Relevant Link:{" "}
-                <a
-                  href={p.relevant_link.href}
-                  style={{ borderBottom: "1px solid pink" }}
-                  target="_blank"
-                >
-                  {p.relevant_link.text}
-                </a>
-              </p>
-            </>
-          )}
         </>
       ))}
     </div>
