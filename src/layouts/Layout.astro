@@ -95,6 +95,9 @@ const theme = Astro.cookies.get("theme")?.value ?? "system";
         --text-color: black;
         --card-background: var(--darkblue);
         --card-text-color: white;
+        --dark-highlight: rgba(226, 149, 120, 0.3);
+        --light-highlight: rgba(0, 109, 119, 0.1);
+        --highlight: var(--light-highlight);
 
         color-scheme: light;
       }
@@ -107,6 +110,7 @@ const theme = Astro.cookies.get("theme")?.value ?? "system";
           --text-color: white;
           --card-background: #7a6f8a;
           --card-text-color: black;
+          --highlight: var(--dark-highlight);
 
           color-scheme: dark;
         }
@@ -119,6 +123,7 @@ const theme = Astro.cookies.get("theme")?.value ?? "system";
         --text-color: white;
         --card-background: #7a6f8a;
         --card-text-color: black;
+        --highlight: var(--dark-highlight);
 
         color-scheme: dark;
       }
@@ -130,6 +135,7 @@ const theme = Astro.cookies.get("theme")?.value ?? "system";
         --text-color: black;
         --card-background: var(--darkblue);
         --card-text-color: white;
+        --highlight: var(--light-highlight);
 
         color-scheme: light;
       }
@@ -205,7 +211,7 @@ const theme = Astro.cookies.get("theme")?.value ?? "system";
         background: linear-gradient(
           180deg,
           rgba(255, 255, 255, 0) 50%,
-          rgba(0, 109, 119, 0.1) 50%
+          var(--highlight) 50%
         );
         display: inline;
       }
@@ -245,48 +251,6 @@ const theme = Astro.cookies.get("theme")?.value ?? "system";
       .content-mobile {
         display: inline;
       }
-
-      /* DARK MODE */
-      /* .dark {
-        background-color: var(--darkbackground);
-        color: var(--lightblue);
-      }
-      .dark .sun {
-        display: none;
-      }
-      .dark .moon {
-        display: block;
-      }
-      .dark .nav-links {
-        color: var(--lightblue);
-      }
-      .dark .active {
-        border-bottom: 1px solid white;
-      }
-      .dark .sticky {
-        color: var(--lightblue);
-        background-color: var(--darkbackground);
-      }
-      .dark .highlight {
-        background: linear-gradient(
-          180deg,
-          rgba(255, 255, 255, 0) 50%,
-          rgba(226, 149, 120, 0.1) 50%
-        ) !important;
-        display: inline;
-      }
-      .dark .social-media a:hover {
-        color: var(--lightpink);
-        transition: color linear 0.2s;
-      }
-      .dark .social-media a {
-        border-bottom: 0.5px solid white !important;
-        transition: color linear 0.2s;
-      }
-      .dark blockquote {
-        border-left: 2px solid !important;
-        padding-left: 10px;
-      } */
 
       @media only screen and (min-width: 550px) {
         .content-mobile {

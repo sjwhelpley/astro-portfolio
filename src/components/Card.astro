@@ -21,38 +21,30 @@ const { github, externalLink, title, subtitle, body, skills, src, leftImage } =
 <div class="project">
   <div
     style={{
-      display: "flex",
-      flexDirection: "row",
-      height: "100%",
       width: "100%",
+      display: "flex",
+      flexDirection: leftImage ? "row" : "row-reverse",
       flexWrap: "wrap",
     }}
   >
-    <div
-      style={{
-        display: "flex",
-        flexDirection: leftImage ? "row" : "row-reverse",
-      }}
-    >
-      <div class="img-container">
-        <Image src={src} alt={title} class="image" />
-      </div>
-      <div class="project-content">
-        <h2 style={{ marginTop: 0 }}>{title}</h2>
-        <h3>{subtitle}</h3>
-        <p>{body}</p>
-        <p>{skills}</p>
-        <div style={{ display: "flex" }}>
-          <a href={github} target="_blank">
-            <Icon name="mdi:github" style={{ width: 40, height: 40 }} />
-          </a>
-          <a href={externalLink} target="_blank">
-            <Icon
-              name="mdi:external-link"
-              style={{ width: 40, height: 40, marginLeft: 8 }}
-            />
-          </a>
-        </div>
+    <div class="img-container">
+      <Image src={src} alt={title} class="image" style={{ height: "auto" }} />
+    </div>
+    <div class="project-content">
+      <h2 style={{ marginTop: 0 }}>{title}</h2>
+      <h3>{subtitle}</h3>
+      <p>{body}</p>
+      <p>{skills}</p>
+      <div style={{ display: "flex" }}>
+        <a href={github} target="_blank">
+          <Icon name="mdi:github" style={{ width: 40, height: 40 }} />
+        </a>
+        <a href={externalLink} target="_blank">
+          <Icon
+            name="mdi:link-variant"
+            style={{ width: 40, height: 40, marginLeft: 8 }}
+          />
+        </a>
       </div>
     </div>
   </div>
@@ -60,6 +52,8 @@ const { github, externalLink, title, subtitle, body, skills, src, leftImage } =
 
 <style>
   .project {
+    width: 100%;
+    max-width: 800px;
     transition: all 0.2s ease-in-out;
     margin: 0 auto;
     background-color: var(--card-background);
@@ -95,13 +89,12 @@ const { github, externalLink, title, subtitle, body, skills, src, leftImage } =
     .img-container {
       flex: 1;
     }
+    .project-content {
+      flex: 2;
+    }
     .mobile-reverse {
       display: flex;
       flex-direction: row;
-    }
-    .project-content {
-      flex: 1;
-      padding: 8px;
     }
   }
 </style>

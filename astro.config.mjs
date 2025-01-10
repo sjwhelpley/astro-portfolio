@@ -11,7 +11,7 @@ export default defineConfig({
     mdx(),
     icon({
       include: {
-        mdi: ["github", "external-link"],
+        mdi: ["github", "link-variant"],
         "line-md": ["sun-rising-loop", "moon-alt-loop"],
       },
     }),
