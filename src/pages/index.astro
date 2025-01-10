@@ -3,12 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import SocialMedia from "../components/SocialMedia.astro";
 import Card from "../components/Card.astro";
 
-import spotify from "../img/spotify.png";
-import prioritask from "../img/prioritask.png";
-import explore from "../img/explore-preview.png";
-import nourishd from "../img/nourishd.png";
-import bnb from "../img/bnb-consumer.png";
 import calc from "../img/calc.png";
+import form from "../img/form.png";
 import MyTypingAnimation from "../components/TypingAnimation";
 ---
 
@@ -27,8 +23,19 @@ import MyTypingAnimation from "../components/TypingAnimation";
         body="React application using CSS variables to handle multiple themes."
         skills="React // CSS // Vercel"
         src={calc}
-        github="https://github.com/sjwhelpley/frontendmentor-calculator-app"
-        externalLink="https://frontendmentor-calculator-r3813x2ib-samantha-whelpleys-projects.vercel.app/"
+        github="https://github.com/sjwhelpley/frontendmentor-calculator"
+        externalLink="https://frontendmentor-calculator-app-chi.vercel.app/"
+        leftImage={true}
+      />
+
+      <Card
+        title="Multi-Step Form"
+        subtitle="FrontendMentor"
+        body="Interactive, multi-step form with error states."
+        skills="React // Redux // MUI // TypeScript // Vercel"
+        src={form}
+        github="https://github.com/sjwhelpley/frontendmentor-multi-step-form"
+        externalLink="https://frontendmentor-multi-step-form-sigma.vercel.app/"
         leftImage={true}
       />
     </main>
